@@ -17,6 +17,10 @@ public:
     double getLength() {
         return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
     }
+
+    bool isEqual(Line other) {
+        return this->getLength() == other.getLength();
+    }
 };
 
 int main() {
@@ -34,6 +38,13 @@ int main() {
     //UC1: Display Length
     cout<<"Length of Line 1: "<<line1.getLength()<<endl;
     cout<<"Length of Line 2: "<<line2.getLength()<<endl;
+
+    // UC2: Check equality
+    if (line1.isEqual(line2)) {
+        cout << "Line 1 and Line 2 are equal in length." << endl;
+    } else {
+        cout << "Line 1 and Line 2 are not equal in length." << endl;
+    }
 
     return 0;
 }
