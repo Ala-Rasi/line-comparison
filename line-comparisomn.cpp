@@ -21,6 +21,18 @@ public:
     bool isEqual(Line other) {
         return this->getLength() == other.getLength();
     }
+
+    int compareTo(Line other) {
+        double len1 = this->getLength();
+        double len2 = other.getLength();
+
+        if (len1 > len2)
+            return 1;
+        else if (len1 < len2)
+            return -1;
+        else
+            return 0;
+    }
 };
 
 int main() {
@@ -44,6 +56,16 @@ int main() {
         cout << "Line 1 and Line 2 are equal in length." << endl;
     } else {
         cout << "Line 1 and Line 2 are not equal in length." << endl;
+    }
+
+    // UC3: Compare lines
+    int comparison = line1.compareTo(line2);
+    if (comparison == 1) {
+        cout << "Line 1 is greater than Line 2." << endl;
+    } else if (comparison == -1) {
+        cout << "Line 1 is smaller than Line 2." << endl;
+    } else {
+        cout << "Line 1 and Line 2 are equal." << endl;
     }
 
     return 0;
